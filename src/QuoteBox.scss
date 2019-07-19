@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#quote-box {
+    background: #fff;
+    color: #333;    
+    width: 450px;
+    padding: 50px 50px;
+    border-radius: 3px;
+    border: none;
+
+    .quoteText {          
+        font-size: 20pt;          
+        i {
+            font-size: 1.5em;;
+        }
+    }   
+    
+    .authorText {
+        font-size: 15pt;
+        margin-top: 10px;
+        text-align: right;        
+    }
+
+    .changeOpacity{
+        animation-name: bring-text;
+        animation-duration: 2s; 
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes bring-text {
+        from {
+            opacity: 0;
+        }
+    
+        to {
+            opacity: 1;
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+        width: 450px;
+        height: 38px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        text-align: center;
+        .button {
+            height: 38px;
+            background: #333;
+            color: #fff;     
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;            
+            &#new-quote{
+                align-self: flex-end;   
+                width: 100px;
+            }
+
+            &#tweet-quote {
+                padding: 0;
+                padding-top: 8px;
+                align-self: flex-start;
+                width: 40px;
+                height: 30px;
+            }
+
+            &:hover {
+                animation-name: button-opacity;
+                animation-duration: 1s;   
+                animation-fill-mode: forwards;             
+            }
+
+            @keyframes button-opacity {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0.9
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 0.8em;
+    display: flex;
+    align-content: space-around;
+}
