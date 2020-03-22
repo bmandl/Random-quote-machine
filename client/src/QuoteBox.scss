@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#quote-box {
+    background: #fff;
+    color: #333;    
+    width: 450px;
+    padding: 50px 50px;
+    border-radius: 3px;
+    border: none;
+
+    .inLineQuote{
+        display: inline;  
+        margin-right: 7px;  
+        .fa.fa-quote-left {
+        font-size: 2em;                  
+    }
+}
+
+    .quoteText {  
+        resize: none;
+        outline-width: 0px;
+        font-family: inherit;
+        color: inherit;                
+        font-size: 20pt;  
+        display:inline;
+        word-wrap: break-word;
+        text-align: left; 
+    }   
+    
+    .authorText {
+        font-size: 15pt;
+        margin-top: 10px;
+        text-align: right;
+        display: flex;  
+
+        #crta {
+            flex-grow: 100;
+        }
+
+        #author{
+            flex-grow: 1;
+            outline-width: 0px;
+        }
+
+    }
+
+    .changeOpacity{
+        opacity: 0;
+        animation-name: bring-text;
+        animation-duration: 2s; 
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes bring-text {
+        0% {opacity: 0;}        
+        100% {opacity: 1;}
+    }
+
+    .buttons {
+        margin-top: 20px;
+        width: 450px;
+        height: 38px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        text-align: center;
+        .button {
+            height: 38px;
+            background: #333;
+            color: #fff;     
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;            
+            &#new-quote{
+                align-self: flex-end;   
+                width: 100px;
+            }
+
+            &#add-quote{
+                width: 100px;
+                margin-left: 150px;
+            }
+
+            &#tweet-quote {
+                padding: 0;
+                padding-top: 8px;
+                align-self: flex-start;
+                width: 40px;
+                height: 30px;
+            }
+
+            &:hover {
+                animation-name: button-opacity;
+                animation-duration: 1s;   
+                animation-fill-mode: forwards;             
+            }
+
+            @keyframes button-opacity {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0.9
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 0.8em;
+    display: flex;
+    align-content: space-around;
+}
